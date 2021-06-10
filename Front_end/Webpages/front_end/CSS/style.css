@@ -1,0 +1,10 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: aqua;
+}
+
+.welcome {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: aqua;
+}
