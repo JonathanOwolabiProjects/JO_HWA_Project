@@ -2,7 +2,6 @@ package com.qa.HWAProject.dto;
 
 import java.util.List;
 
-import com.qa.HWAProject.domain.House;
 
 public class PortfolioDTO {
 	
@@ -10,9 +9,7 @@ public class PortfolioDTO {
 
 	private String name;
 	
-	private List<House> houses;
-	
-	// GETTERS AND SETTERS 
+	private List<HouseDTO> houses;
 
 	public Integer getId() {
 		return id;
@@ -30,13 +27,15 @@ public class PortfolioDTO {
 		this.name = name;
 	}
 
-	public List<House> getHouses() {
+	public List<HouseDTO> getHouses() {
 		return houses;
 	}
 
-	public void setHouses(List<House> houses) {
+	public void setHouses(List<HouseDTO> houses) {
 		this.houses = houses;
 	}
+	
+	// GETTERS AND SETTERS 
 	
 
 }
