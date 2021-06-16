@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.HWAProject.domain.House;
+import com.qa.HWAProject.dto.HouseDTO;
 import com.qa.HWAProject.service.HouseService;
-
 
 @RestController
 @RequestMapping("/houses")
@@ -39,25 +39,25 @@ public class HouseController {
 	
 	// Create Method
 	@PostMapping("/create")
-	public House createHouse(@RequestBody House house) {
+	public HouseDTO createHouse(@RequestBody House house) {
 		return this.service.addHouse(house);
 	}
 	
 	// Read Method
 	@GetMapping("/")
-	public List<House> getAllHouses() {
+	public List<HouseDTO> getAllHouses() {
 		return this.service.getAllHouses();
 	}
 	
 	// Fetch data by id Method
 	@GetMapping("/find/{id}")
-	public House findHouse(@PathVariable int id) {
+	public HouseDTO findHouse(@PathVariable int id) {
 		return this.service.findHouse(id);
 	}
 		
 	// Update Method
 	@PutMapping("/update/{id}")
-	public House updateHouse(@RequestBody House house, @PathVariable int id) {
+	public HouseDTO updateHouse(@RequestBody House house, @PathVariable int id) {
 		return this.service.updateHouse(id, house);
 	}
 	

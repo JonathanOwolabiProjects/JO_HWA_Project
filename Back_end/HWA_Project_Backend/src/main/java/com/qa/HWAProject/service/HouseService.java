@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.qa.HWAProject.domain.House;
@@ -18,9 +17,10 @@ import com.qa.HWAProject.utils.HouseMapper;
 public class HouseService {
 	
 	private HouseRepo repo;
+	
 	private HouseMapper mapper;
 
-	@Autowired
+	
 	public HouseService(HouseRepo repo, HouseMapper mapper) {
 		super();
 		this.repo = repo;

@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.ManyToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class House {
@@ -26,8 +26,8 @@ public class House {
 	
 	//house name, house type, ownership, no. rooms, no. bathrooms, garden
 	
-//	@ManyToOne
-//	private Portfolio portfolio; 
+	@ManyToOne
+	private Portfolio portfolio; 
 	public House() {
 		
 	}
@@ -110,13 +110,13 @@ public class House {
 		this.garden = garden;
 	}
 
-//	public Portfolio getPortfolio() {
-//		return portfolio;
-//	}
-//
-//	public void setPortfolio(Portfolio portfolio) {
-//		this.portfolio = portfolio;
-//	}
+	public Portfolio getPortfolio() {
+		return portfolio;
+	}
+
+	public void setPortfolio(Portfolio portfolio) {
+		this.portfolio = portfolio;
+	}
 
 	@Override
 	public String toString() {
