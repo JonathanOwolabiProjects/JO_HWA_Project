@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloc State - Home</title>
+    <title>Bloc State - Manage Portfolio</title>
     <link href="front_end/CSS/style.css" rel="stylesheet">
 </head>
 
@@ -22,8 +22,48 @@
         </ul>
     </nav>
 
+    <h1>Portfolio</h1>
 
     <main>
+        <div class="forms">
+            <form id="CreateForm">
+                <li>
+                    <label for="houseName" class="form-label">House Name</label>
+                    <input id="houseName" name="houseName" type="text" class="form-control">
+                </li>
+                <li>
+                    <label for="houseType">Type of House</label>
+                    <select name="houseType" id="houseType">
+                        <option value="bungalow">Bungalow</option>
+                        <option value="cottage">Cottage</option>
+                        <option value="detached">Detached</option>
+                        <option value="end of terrace">End of Terrace</option>
+                        <option value="flat">Flat</option>
+                        <option value="semi-detached">Semi-Detached</option>
+                        <option value="terrace">Terrace</option>
+                        <option value="false">False</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="Model" class="form-label">Model</label>
+                    <input id="Model" name="Model" type="text" class="form-control">
+                </li>
+                <li>
+                    <label for="Colour" class="form-label">Colour</label>
+                    <input id="Colour" name="Colour" type="text" class="form-control mb-2">
+                </li>
+                <li>
+                    <label for="garden">Garden</label>
+                    <select name="garden" id="garden">
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </li>
+                <button type="reset" class="btn btn-primary">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
 
         <div class="content">
             <h1 class="h1">Bloc State</h1>
