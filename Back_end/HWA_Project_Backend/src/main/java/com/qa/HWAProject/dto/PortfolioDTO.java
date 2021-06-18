@@ -11,6 +11,8 @@ public class PortfolioDTO {
 	
 	private List<HouseDTO> houses;
 
+	// GETTERS AND SETTERS 
+	
 	public Integer getId() {
 		return id;
 	}
@@ -35,7 +37,7 @@ public class PortfolioDTO {
 		this.houses = houses;
 	}
 	
-	// GETTERS AND SETTERS 
+	
 	
 
 }

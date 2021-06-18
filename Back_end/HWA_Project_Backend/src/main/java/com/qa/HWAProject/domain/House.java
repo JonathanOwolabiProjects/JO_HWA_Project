@@ -6,8 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity
+@Entity // marks class as representing a table in the database
 public class House {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto_increment
 	private Integer id;

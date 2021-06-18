@@ -1,0 +1,3 @@
+insert into houses.house(house_name, house_type, ownership, no_rooms, no_bathrooms, garden) values ('13 Ini House', 'Flat', 'Leasehold', 3, 1, false);
+insert into houses.house(house_name, house_type, ownership, no_rooms, no_bathrooms, garden) values ('18 Ini House', 'Flat', 'Leasehold', 3, 1, false);
+insert into houses.house(house_name, house_type, ownership, no_rooms, no_bathrooms, garden) values ('13 Browning House', 'Flat', 'Leasehold', 2, 2, false);

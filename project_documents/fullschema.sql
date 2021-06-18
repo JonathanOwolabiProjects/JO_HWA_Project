@@ -33,4 +33,6 @@ create table if not exists houses.portfolio (
   constraint fk_house_id
     foreign key (fk_house_id) references houses.house (house_id)
     );
+    
+
   
