@@ -13,10 +13,10 @@ create table if not exists houses.house (
   );
   
 create table if not exists houses.portfolio (
-  portfolio_id int auto_increment not null,
-  fk_house_id int,
+  id int auto_increment not null,
   P_name varchar(80) not null,
-  primary key (portfolio_id),
+  fk_house_id int,
+  primary key (id),
   constraint fk_house_id
     foreign key (fk_house_id) references houses.house (id)
     );
