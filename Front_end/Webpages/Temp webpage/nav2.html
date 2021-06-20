@@ -1,25 +1,24 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0
-}
+<!DOCTYPE html>
+<html lang="en">
 
-.welcome {
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    color: #40aff0;
-    margin-left: 25%;
-    padding: 1px 16px;
-    height: 1000px;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Navigation Bar - W3jar.Com</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
-
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
         .container {
             height: 60px;
@@ -203,3 +202,52 @@ body {
             margin: 0 auto;
             padding: 10px;
         }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <a href="#"><img src="img/Bloc_logo.png" alt="logo"></a>
+        </div>
+        <div class="navbar">
+
+            <div class="icon-bar" onclick="Show()">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+            <ul id="nav-lists">
+                <li class="close"><span onclick="Hide()">×</span></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="manageport.html">Manage Portfolio</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+    <div class="body">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum autem repudiandae blanditiis odit voluptate
+            sapiente ab laborum aut dolore quam ipsam reiciendis illo, iure quia, minus eum eligendi laboriosam
+            recusandae!</p>
+    </div>
+
+    <script>
+        var navList = document.getElementById("nav-lists");
+        function Show() {
+            navList.classList.add("_Menus-show");
+        }
+
+        function Hide() {
+            navList.classList.remove("_Menus-show");
+        }
+    </script>
+
+</body>
+
+</html>

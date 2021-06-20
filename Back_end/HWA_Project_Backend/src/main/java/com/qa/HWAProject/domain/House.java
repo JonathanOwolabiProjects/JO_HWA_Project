@@ -25,7 +25,7 @@ public class House {
 
 	private boolean garden;
 	
-	//house name, house type, ownership, no. rooms, no. bathrooms, garden
+	//houseName, houseType, ownership, no. rooms, no. bathrooms, garden
 	
 	@ManyToOne
 	private Portfolio portfolio; 
