@@ -71,6 +71,8 @@ When running the application make sure to use http://localhost/8090 in order to 
  http://localhost/8090
 ```
 
+final jiraboard link = https://jonathanowolabiqa.atlassian.net/jira/software/projects/JOHWA/boards/3
+
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
