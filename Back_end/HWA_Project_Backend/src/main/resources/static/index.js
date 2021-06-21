@@ -4,11 +4,12 @@ const output = document.getElementById("output");
 
 const getHouses = async () => {
     const res = await axios.get("/houses/");
+    const output = document.getElementById("houseCards")
     output.innerHTML = "";
-    res.data.forEach(House => renderHouse(house));
+    res.data.forEach(house => renderHouse(house));
 }
 
-const renderCar = ({ id, houseName, houseType, ownership, no.rooms, no.bathrooms, garden }) => {
+const renderHouse = ({ id, houseName, houseType, ownership, noRooms, noBathrooms, garden }) => {
     const column = document.createElement("div");
     column.className = "col";
 
@@ -83,7 +84,16 @@ document.getElementById("createForm").addEventListener("submit", function (event
         .then(res => {
             getHouses();
             this.reset();
-            this.make.focus();
+            this.houseName.focus();
+        }).catch(err => console.log(err));
+
+    console.log(this);
+
+    axios.put("/houses/", data)
+        .then(res => {
+            getHouses();
+            this.reset();
+            this.houseName.focus();
         }).catch(err => console.log(err));
 
     console.log(this);

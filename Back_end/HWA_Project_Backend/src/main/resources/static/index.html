@@ -281,6 +281,11 @@
         .btn-primary:hover {
             background-color: #359db8c5;
         }
+
+        .row-cols-4>* {
+            flex: 0 0 auto;
+            width: 25%
+        }
     </style>
 </head>
 
@@ -315,7 +320,7 @@
         <div class="forms">
             <h1 class="formheader">House Details</h1>
 
-            <form id="CreateForm">
+            <form id="createForm" action="post">
                 <li>
                     <label for="houseName" class="textform1">Property Address</label>
                     <input id="houseName" name="houseName" type="text" class="textform"
@@ -369,8 +374,14 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
+            <section class="col">
+                <div id="output" class="card-group row row-cols-4 g-4">
+
+                </div>
+            </section>
         </div>
     </main>
+    <div id="houseCards"></div>
 
     <script>
         var navList = document.getElementById("nav-lists");

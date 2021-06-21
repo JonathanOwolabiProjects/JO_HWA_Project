@@ -1,5 +1,6 @@
 package com.qa.HWAProject.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -21,7 +22,7 @@ public class Portfolio {
 	
 	@OneToMany(mappedBy = "portfolio")
 	@JsonIgnore
-	private List<House> houses;
+	private List<House> houses = new ArrayList<>();
 
 	public Integer getId() {
 		return id;

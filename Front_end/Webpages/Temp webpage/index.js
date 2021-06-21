@@ -4,11 +4,12 @@ const output = document.getElementById("output");
 
 const getHouses = async () => {
     const res = await axios.get("/houses/");
+    const output = document.getElementById("houseCards")
     output.innerHTML = "";
     res.data.forEach(House => renderHouse(house));
 }
 
-const renderCar = ({ id, houseName, houseType, ownership, no.rooms, no.bathrooms, garden }) => {
+const renderHouse = ({ id, houseName, houseType, ownership, noRooms, noBathrooms, garden }) => {
     const column = document.createElement("div");
     column.className = "col";
 
