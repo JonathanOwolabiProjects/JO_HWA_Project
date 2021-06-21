@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloc State - Manage Portfolio</title>
+    <link href="front_end/CSS/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="#"><img src="img/Bloc_logo.png" alt="logo"></a>
+        </div>
+        <div class="navbar">
+            <nav>
+            <div class="icon-bar" onclick="Show()">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+            <ul id="nav-lists">
+                <li class="close"><span onclick="Hide()">×</span></li>
+                <li><a class="active" href="homepage.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="manageport.html">Manage Portfolio</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+            </ul>
+            
+            </nav>
+    </div>
+
+        <h1>Portfolio</h1>
+
+        <main>
+            <div class="forms">
+                <form id="CreateForm">
+                    <li>
+                        <label for="houseName" class="form-label">House Name</label>
+                        <input id="houseName" name="houseName" type="text" class="form-control">
+                    </li>
+                    <li>
+                        <label for="houseType">Type of House</label>
+                        <select name="houseType" id="houseType">
+                            <option value="bungalow">Bungalow</option>
+                            <option value="cottage">Cottage</option>
+                            <option value="detached">Detached</option>
+                            <option value="end of terrace">End of Terrace</option>
+                            <option value="flat">Flat</option>
+                            <option value="semi-detached">Semi-Detached</option>
+                            <option value="terrace">Terrace</option>
+                            <option value="false">False</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="Model" class="form-label">Model</label>
+                        <input id="Model" name="Model" type="text" class="form-control">
+                    </li>
+                    <li>
+                        <label for="Colour" class="form-label">Colour</label>
+                        <input id="Colour" name="Colour" type="text" class="form-control mb-2">
+                    </li>
+                    <li>
+                        <label for="garden">Garden</label>
+                        <select name="garden" id="garden">
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </li>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+
+            <div class="content">
+                <h1 class="h1">Bloc State</h1>
+                <h3 class="h3">The property portfolio management solution</h3>
+
+                <br />
+                <br />
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+
+                <br />
+                <br />
+                <br />
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </main>
+
+        <script>
+            var navList = document.getElementById("nav-lists");
+            function Show() {
+                navList.classList.add("_Menus-show");
+            }
+
+            function Hide() {
+                navList.classList.remove("_Menus-show");
+            }
+        </script>
+</body>
+
+</html>
