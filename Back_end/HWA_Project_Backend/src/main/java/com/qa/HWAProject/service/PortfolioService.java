@@ -59,6 +59,9 @@ public class PortfolioService {
 		Portfolio existing = this.repo.findById(id).orElseThrow(() -> new EntityNotFoundException()); // fetch existing
 		
 		existing.setName(newInfo.getName()); // update the values
+		existing.setOccupancy(newInfo.getOccupancy());
+		existing.setSalePrice(newInfo.getSalePrice());
+		existing.setRent(newInfo.getRent());
 		
 		Portfolio updated = this.repo.save(existing);
 		

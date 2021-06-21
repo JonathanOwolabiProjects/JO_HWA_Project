@@ -20,6 +20,12 @@ public class Portfolio {
 
 	private String name;
 	
+	private String occupancy;
+	
+	private int salePrice;
+	
+	private int rent;
+	
 	@OneToMany(mappedBy = "portfolio")
 	@JsonIgnore
 	private List<House> houses = new ArrayList<>();
@@ -46,6 +52,30 @@ public class Portfolio {
 
 	public void setHouses(List<House> houses) {
 		this.houses = houses;
+	}
+
+	public String getOccupancy() {
+		return occupancy;
+	}
+
+	public void setOccupancy(String occupancy) {
+		this.occupancy = occupancy;
+	}
+
+	public int getSalePrice() {
+		return salePrice;
+	}
+
+	public void setSalePrice(int salePrice) {
+		this.salePrice = salePrice;
+	}
+
+	public int getRent() {
+		return rent;
+	}
+
+	public void setRent(int rent) {
+		this.rent = rent;
 	}
 	
 	

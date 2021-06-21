@@ -104,3 +104,95 @@ const deleteHouse = async (id) => {
     getHouses();
     location.reload();
 };
+
+
+const getPortfolio = async () => {
+    const res = await axios.get("/portfolio/");
+    const output = document.getElementById("houseCards")
+    output.innerHTML = "";
+    res.data.forEach(portfolio => renderPortfolio(portfolio));
+}
+
+const renderPortfolio = ({ id, name, occupancy, salePrice, rent }) => {
+    const column = document.createElement("div");
+    column.className = "col";
+
+    const card = document.createElement("div");
+    card.className = "card";
+    column.appendChild(card);
+
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+    card.appendChild(cardBody);
+
+    const pNameText = document.createElement("p");
+    pNameText.className = "card-text";
+    pNameText.innerText = `Name: ${name}`;
+    cardBody.appendChild(pNameText);
+
+    const occupancyText = document.createElement("p");
+    occupancyText.className = "card-text";
+    occupancyText.innerText = `Occupancy: ${occupancy}`;
+    cardBody.appendChild(occupancyText);
+
+    const salePriceText = document.createElement("p");
+    salePriceText.className = "card-text";
+    salePriceText.innerText = `Sale Price: ${salePrice}`;
+    cardBody.appendChild(salePriceText);
+
+    const rentText = document.createElement("p");
+    rentText.className = "card-text";
+    rentText.innerText = `Rent Per Month: ${rent}`;
+    cardBody.appendChild(rentText);
+
+    const cardFooter = document.createElement("div");
+    cardFooter.className = "card-footer";
+    card.appendChild(cardFooter);
+
+    const deleteButton = document.createElement("a");
+    deleteButton.innerText = "Delete";
+    deleteButton.className = "card-link";
+    deleteButton.addEventListener("click", function () {
+        deleteHouse(id);
+    });
+    cardFooter.appendChild(deleteButton);
+
+    output.appendChild(column);
+}
+
+getPortfolio();
+
+document.getElementById("createForm1").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const data = {
+        name: this.name.value,
+        occupancy: this.occupancy.value,
+        salePrice: this.salePrice.value,
+        rent: this.rent.value
+    }
+
+    axios.post("/portfolio/create", data)
+        .then(res => {
+            getHouses();
+            this.reset();
+            this.name.focus();
+        }).catch(err => console.log(err));
+
+    console.log(this);
+
+    axios.put("/portfolio/", data)
+        .then(res => {
+            getHouses();
+            this.reset();
+            this.name.focus();
+        }).catch(err => console.log(err));
+
+    console.log(this);
+});
+
+const deletePortfolio = async (id) => {
+    const res = await axios.delete(`/portfolio/remove/${id}`);
+    getPortfolio();
+    location.reload();
+};

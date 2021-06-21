@@ -270,6 +270,10 @@
             font-weight: bold;
         }
 
+        .col {
+            align-items: center;
+        }
+
         .btn-primary {
             background-color: #115c6efb;
             border: none;
@@ -332,13 +336,13 @@
                 <li>
                     <label for="houseType" class="textform1">Type of House</label>
                     <select name="houseType" id="houseType">
-                        <option value="bungalow">Bungalow</option>
-                        <option value="cottage">Cottage</option>
-                        <option value="detached">Detached</option>
-                        <option value="end of terrace">End of Terrace</option>
-                        <option value="flat">Flat</option>
-                        <option value="semi-detached">Semi-Detached</option>
-                        <option value="terrace">Terrace</option>
+                        <option value="Bungalow">Bungalow</option>
+                        <option value="Cottage">Cottage</option>
+                        <option value="Detached">Detached</option>
+                        <option value="End of Terrace">End of Terrace</option>
+                        <option value="Flat">Flat</option>
+                        <option value="Semi-Detached">Semi-Detached</option>
+                        <option value="Terrace">Terrace</option>
                     </select>
                 </li>
 
@@ -347,6 +351,7 @@
                     <select name="ownership" id="ownership">
                         <option value="Freehold">Freehold</option>
                         <option value="Leasehold">Leasehold</option>
+                        <option value="Renting">Rent</option>
                         <option value="Joint Tenants">Joint Tenants</option>
                         <option value="Shared Ownership">Shared Ownership</option>
 
@@ -355,12 +360,12 @@
 
                 <li>
                     <label for="noRooms" class="textform1">Number of Bedroom(s)</label>
-                    <input id="noRooms" name="Model" type="number" class="textform">
+                    <input id="noRooms" name="noRooms" type="number" class="textform">
                 </li>
 
                 <li>
                     <label for="noBathrooms" class="textform1">Number of Bathroom(s)</label>
-                    <input id="noBathrooms" name="Colour" type="number" class="textform">
+                    <input id="noBathrooms" name="noBathrooms" type="number" class="textform">
                 </li>
 
                 <li>
@@ -375,12 +380,50 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
-            <section class="col">
-                <div id="output" class="card-group row row-cols-4 g-4">
 
-                </div>
-            </section>
         </div>
+
+        <div class="forms">
+            <h1 class="formheader">Portfolio Details</h1>
+
+            <form id="createForm1" action="post">
+                <li>
+                    <label for="pname" class="textform1">Portfolio Address</label>
+                    <input id="pname" name="pname" type="text" class="textform" placeholder="   portfolio name...">
+                </li>
+
+                <li>
+                    <label for="occupancy" class="textform1">Status of Occupancy</label>
+                    <select name="occupancy" id="occupancy">
+                        <option value="sold">Sold</option>
+                        <option value="Leasehold">Leasehold</option>
+                        <option value="Renting">Renting</option>
+                        <option value="Joint Tenants">HMO</option>
+                        <option value="Shared Ownership">Shared Ownership</option>
+                    </select>
+                </li>
+
+                <li>
+                    <label for="price" class="textform1">Sale Price</label>
+                    <input id="price" name="price" type="number" class="textform">
+                </li>
+
+                <li>
+                    <label for="rent" class="textform1">Rent per Month</label>
+                    <input id="rent" name="rent" type="number" class="textform">
+                </li>
+
+                <button type="reset" class="btn btn-primary">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+        <section class="col">
+            <div id="output" class="card-group row row-cols-4 g-4">
+
+            </div>
+        </section>
     </main>
     <div id="houseCards"></div>
 

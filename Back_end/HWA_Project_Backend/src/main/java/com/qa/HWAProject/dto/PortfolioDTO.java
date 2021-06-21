@@ -9,6 +9,12 @@ public class PortfolioDTO {
 
 	private String name;
 	
+	private String occupancy;
+	
+	private int salePrice;
+	
+	private int rent;
+	
 	private List<HouseDTO> houses;
 
 	// GETTERS AND SETTERS 
@@ -35,6 +41,30 @@ public class PortfolioDTO {
 
 	public void setHouses(List<HouseDTO> houses) {
 		this.houses = houses;
+	}
+
+	public String getOccupancy() {
+		return occupancy;
+	}
+
+	public void setOccupancy(String occupancy) {
+		this.occupancy = occupancy;
+	}
+
+	public int getSalePrice() {
+		return salePrice;
+	}
+
+	public void setSalePrice(int salePrice) {
+		this.salePrice = salePrice;
+	}
+
+	public int getRent() {
+		return rent;
+	}
+
+	public void setRent(int rent) {
+		this.rent = rent;
 	}
 	
 	
