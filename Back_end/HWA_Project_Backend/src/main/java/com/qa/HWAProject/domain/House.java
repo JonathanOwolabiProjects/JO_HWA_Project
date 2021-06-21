@@ -1,5 +1,6 @@
 package com.qa.HWAProject.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,16 +14,22 @@ public class House {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto_increment
 	private Integer id;
 	
+	@Column(name = "house_name")
 	private String houseName;
 	
+	@Column(name = "house_type")
 	private String houseType;
 	
+	@Column(name = "ownership")
 	private String ownership;
 	
+	@Column(name = "no_rooms")
 	private int noRooms;
 	
+	@Column(name = "no_bathrooms")
 	private int noBathrooms;
 
+	@Column(name = "garden")
 	private boolean garden;
 	
 	//houseName, houseType, ownership, no. rooms, no. bathrooms, garden

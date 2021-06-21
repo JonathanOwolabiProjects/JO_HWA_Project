@@ -107,93 +107,93 @@ const deleteHouse = async (id) => {
 
 // portfolio funtionality
 
-const getPortfolio = async () => {
-    const res = await axios.get("/portfolio/");
-    const output = document.getElementById("houseCards")
-    output.innerHTML = "";
-    res.data.forEach(portfolio => renderPortfolio(portfolio));
-}
+// const getPortfolio = async () => {
+//     const res = await axios.get("/portfolio/");
+//     const output = document.getElementById("houseCards")
+//     output.innerHTML = "";
+//     res.data.forEach(portfolio => renderPortfolio(portfolio));
+// }
 
-const renderPortfolio = ({ id, name, occupancy, salePrice, rent }) => {
-    const column1 = document.createElement("div");
-    column1.className = "col";
+// const renderPortfolio = ({ id, name, occupancy, salePrice, rent }) => {
+//     const column1 = document.createElement("div");
+//     column1.className = "col";
 
-    const card1 = document.createElement("div");
-    card1.className = "card";
-    column1.appendChild(card);
+//     const card1 = document.createElement("div");
+//     card1.className = "card";
+//     column1.appendChild(card);
 
-    const cardBody1 = document.createElement("div");
-    cardBody1.className = "card-body";
-    card1.appendChild(cardBody);
+//     const cardBody1 = document.createElement("div");
+//     cardBody1.className = "card-body";
+//     card1.appendChild(cardBody);
 
-    const pNameText = document.createElement("p");
-    pNameText.className = "card-text";
-    pNameText.innerText = `Name: ${name}`;
-    cardBody1.appendChild(pNameText);
+//     const pNameText = document.createElement("p");
+//     pNameText.className = "card-text";
+//     pNameText.innerText = `Name: ${name}`;
+//     cardBody1.appendChild(pNameText);
 
-    const occupancyText = document.createElement("p");
-    occupancyText.className = "card-text";
-    occupancyText.innerText = `Occupancy: ${occupancy}`;
-    cardBody1.appendChild(occupancyText);
+//     const occupancyText = document.createElement("p");
+//     occupancyText.className = "card-text";
+//     occupancyText.innerText = `Occupancy: ${occupancy}`;
+//     cardBody1.appendChild(occupancyText);
 
-    const salePriceText = document.createElement("p");
-    salePriceText.className = "card-text";
-    salePriceText.innerText = `Sale Price: ${salePrice}`;
-    cardBody1.appendChild(salePriceText);
+//     const salePriceText = document.createElement("p");
+//     salePriceText.className = "card-text";
+//     salePriceText.innerText = `Sale Price: ${salePrice}`;
+//     cardBody1.appendChild(salePriceText);
 
-    const rentText = document.createElement("p");
-    rentText.className = "card-text";
-    rentText.innerText = `Rent Per Month: ${rent}`;
-    cardBody1.appendChild(rentText);
+//     const rentText = document.createElement("p");
+//     rentText.className = "card-text";
+//     rentText.innerText = `Rent Per Month: ${rent}`;
+//     cardBody1.appendChild(rentText);
 
-    const cardFooter = document.createElement("div");
-    cardFooter.className = "card-footer";
-    card1.appendChild(cardFooter);
+//     const cardFooter = document.createElement("div");
+//     cardFooter.className = "card-footer";
+//     card1.appendChild(cardFooter);
 
-    const deleteButton1 = document.createElement("a");
-    deleteButton1.innerText = "Delete";
-    deleteButton1.className = "card-link";
-    deleteButton1.addEventListener("click", function () {
-        deleteportfolio(id);
-    });
-    cardFooter1.appendChild(deleteButton1);
+//     const deleteButton1 = document.createElement("a");
+//     deleteButton1.innerText = "Delete";
+//     deleteButton1.className = "card-link";
+//     deleteButton1.addEventListener("click", function () {
+//         deleteportfolio(id);
+//     });
+//     cardFooter1.appendChild(deleteButton1);
 
-    output.appendChild(column1);
-}
+//     output.appendChild(column1);
+// }
 
-getPortfolio();
+// getPortfolio();
 
-document.getElementById("createForm1").addEventListener("submit", function (event) {
-    event.preventDefault();
+// document.getElementById("createForm1").addEventListener("submit", function (event) {
+//     event.preventDefault();
 
-    const data1 = {
-        name: this.name.value,
-        occupancy: this.occupancy.value,
-        salePrice: this.salePrice.value,
-        rent: this.rent.value
-    }
+//     const data1 = {
+//         name: this.name.value,
+//         occupancy: this.occupancy.value,
+//         salePrice: this.salePrice.value,
+//         rent: this.rent.value
+//     }
 
-    axios.post("/portfolio/create", data1)
-        .then(res => {
-            getPortfolio();
-            this.reset();
-            this.name.focus();
-        }).catch(err => console.log(err));
+//     axios.post("/portfolio/create", data1)
+//         .then(res => {
+//             getPortfolio();
+//             this.reset();
+//             this.name.focus();
+//         }).catch(err => console.log(err));
 
-    console.log(this);
+//     console.log(this);
 
-    axios.put("/portfolio/update", data)
-        .then(res => {
-            getPortfolio();
-            this.reset();
-            this.name.focus();
-        }).catch(err => console.log(err));
+//     axios.put("/portfolio/update", data)
+//         .then(res => {
+//             getPortfolio();
+//             this.reset();
+//             this.name.focus();
+//         }).catch(err => console.log(err));
 
-    console.log(this);
-});
+//     console.log(this);
+// });
 
-const deletePortfolio = async (id) => {
-    const res = await axios.delete(`/portfolio/remove/${id}`);
-    getPortfolio();
-    location.reload();
-};
+// const deletePortfolio = async (id) => {
+//     const res = await axios.delete(`/portfolio/remove/${id}`);
+//     getPortfolio();
+//     location.reload();
+// };

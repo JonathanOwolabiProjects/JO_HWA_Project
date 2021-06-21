@@ -3,6 +3,7 @@ package com.qa.HWAProject.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,12 +19,14 @@ public class Portfolio {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
+	@Column(name = "portfolio_name")
 	private String name;
-	
+	@Column (name = "occupancy")
 	private String occupancy;
 	
+	@Column(name = "sale_price")
 	private int salePrice;
-	
+	@Column(name = "rent")
 	private int rent;
 	
 	@OneToMany(mappedBy = "portfolio")
