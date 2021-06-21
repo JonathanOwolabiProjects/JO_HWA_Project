@@ -102,4 +102,5 @@ document.getElementById("createForm").addEventListener("submit", function (event
 const deleteHouse = async (id) => {
     const res = await axios.delete(`/houses/remove/${id}`);
     getHouses();
+    location.reload();
 };

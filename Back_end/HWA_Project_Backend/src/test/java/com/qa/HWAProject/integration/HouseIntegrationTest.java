@@ -24,8 +24,8 @@ import com.qa.HWAProject.domain.House;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT) // prevents port conflicts
 @AutoConfigureMockMvc
-@Sql(scripts = { "classpath:house-schema.sql",
-		"classpath:house-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
+@Sql(scripts = { "classpath:schema.sql",
+		"classpath:data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 public class HouseIntegrationTest {
 	
 	@Autowired
@@ -36,10 +36,10 @@ public class HouseIntegrationTest {
 	
 	@Test
 	void testCreate() throws Exception {
-		House testHouse = new House("18 Innis", "Apartment", "Renting", 3, 1, false);
+		House testHouse = new House("30 Innis", "Apartment", "Renting", 3, 1, false);
 		String testHouseAsJSON = this.mapper.writeValueAsString(testHouse);
 		
-		House testSavedHouse = new House("18 Innis", "Apartment", "Renting", 3, 1, false);
+		House testSavedHouse = new House("30 Innis", "Apartment", "Renting", 3, 1, false);
 		testSavedHouse.setId(1);
 		String testSavedHouseAsJSON = this.mapper.writeValueAsString(testSavedHouse);
 		
