@@ -1,5 +1,5 @@
 'use strict';
-
+// house functionality
 const output = document.getElementById("output");
 
 const getHouses = async () => {
@@ -23,12 +23,12 @@ const renderHouse = ({ id, houseName, houseType, ownership, noRooms, noBathrooms
 
     const houseNameText = document.createElement("p");
     houseNameText.className = "card-text";
-    houseNameText.innerText = `houseName: ${houseName}`;
+    houseNameText.innerText = `House Name: ${houseName}`;
     cardBody.appendChild(houseNameText);
 
     const houseTypeText = document.createElement("p");
     houseTypeText.className = "card-text";
-    houseTypeText.innerText = `houseType: ${houseType}`;
+    houseTypeText.innerText = `House Type: ${houseType}`;
     cardBody.appendChild(houseTypeText);
 
     const ownershipText = document.createElement("p");
@@ -38,12 +38,12 @@ const renderHouse = ({ id, houseName, houseType, ownership, noRooms, noBathrooms
 
     const noRoomsText = document.createElement("p");
     noRoomsText.className = "card-text";
-    noRoomsText.innerText = `noRooms: ${noRooms}`;
+    noRoomsText.innerText = `Number of Rooms: ${noRooms}`;
     cardBody.appendChild(noRoomsText);
 
     const noBathroomsText = document.createElement("p");
     noBathroomsText.className = "card-text";
-    noBathroomsText.innerText = `noBathrooms: ${noBathrooms}`;
+    noBathroomsText.innerText = `Number of Bathrooms: ${noBathrooms}`;
     cardBody.appendChild(noBathroomsText);
 
     const gardenText = document.createElement("p");
@@ -89,7 +89,7 @@ document.getElementById("createForm").addEventListener("submit", function (event
 
     console.log(this);
 
-    axios.put("/houses/", data)
+    axios.put("/houses/update", data)
         .then(res => {
             getHouses();
             this.reset();
@@ -105,6 +105,7 @@ const deleteHouse = async (id) => {
     location.reload();
 };
 
+// portfolio funtionality
 
 const getPortfolio = async () => {
     const res = await axios.get("/portfolio/");
@@ -114,50 +115,50 @@ const getPortfolio = async () => {
 }
 
 const renderPortfolio = ({ id, name, occupancy, salePrice, rent }) => {
-    const column = document.createElement("div");
-    column.className = "col";
+    const column1 = document.createElement("div");
+    column1.className = "col";
 
-    const card = document.createElement("div");
-    card.className = "card";
-    column.appendChild(card);
+    const card1 = document.createElement("div");
+    card1.className = "card";
+    column1.appendChild(card);
 
-    const cardBody = document.createElement("div");
-    cardBody.className = "card-body";
-    card.appendChild(cardBody);
+    const cardBody1 = document.createElement("div");
+    cardBody1.className = "card-body";
+    card1.appendChild(cardBody);
 
     const pNameText = document.createElement("p");
     pNameText.className = "card-text";
     pNameText.innerText = `Name: ${name}`;
-    cardBody.appendChild(pNameText);
+    cardBody1.appendChild(pNameText);
 
     const occupancyText = document.createElement("p");
     occupancyText.className = "card-text";
     occupancyText.innerText = `Occupancy: ${occupancy}`;
-    cardBody.appendChild(occupancyText);
+    cardBody1.appendChild(occupancyText);
 
     const salePriceText = document.createElement("p");
     salePriceText.className = "card-text";
     salePriceText.innerText = `Sale Price: ${salePrice}`;
-    cardBody.appendChild(salePriceText);
+    cardBody1.appendChild(salePriceText);
 
     const rentText = document.createElement("p");
     rentText.className = "card-text";
     rentText.innerText = `Rent Per Month: ${rent}`;
-    cardBody.appendChild(rentText);
+    cardBody1.appendChild(rentText);
 
     const cardFooter = document.createElement("div");
     cardFooter.className = "card-footer";
-    card.appendChild(cardFooter);
+    card1.appendChild(cardFooter);
 
-    const deleteButton = document.createElement("a");
-    deleteButton.innerText = "Delete";
-    deleteButton.className = "card-link";
-    deleteButton.addEventListener("click", function () {
-        deleteHouse(id);
+    const deleteButton1 = document.createElement("a");
+    deleteButton1.innerText = "Delete";
+    deleteButton1.className = "card-link";
+    deleteButton1.addEventListener("click", function () {
+        deleteportfolio(id);
     });
-    cardFooter.appendChild(deleteButton);
+    cardFooter1.appendChild(deleteButton1);
 
-    output.appendChild(column);
+    output.appendChild(column1);
 }
 
 getPortfolio();
@@ -165,25 +166,25 @@ getPortfolio();
 document.getElementById("createForm1").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const data = {
+    const data1 = {
         name: this.name.value,
         occupancy: this.occupancy.value,
         salePrice: this.salePrice.value,
         rent: this.rent.value
     }
 
-    axios.post("/portfolio/create", data)
+    axios.post("/portfolio/create", data1)
         .then(res => {
-            getHouses();
+            getPortfolio();
             this.reset();
             this.name.focus();
         }).catch(err => console.log(err));
 
     console.log(this);
 
-    axios.put("/portfolio/", data)
+    axios.put("/portfolio/update", data)
         .then(res => {
-            getHouses();
+            getPortfolio();
             this.reset();
             this.name.focus();
         }).catch(err => console.log(err));
