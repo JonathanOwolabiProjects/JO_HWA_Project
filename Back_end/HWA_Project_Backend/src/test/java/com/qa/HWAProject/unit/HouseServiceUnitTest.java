@@ -29,9 +29,9 @@ public class HouseServiceUnitTest {
 	@Test
 	void testUpdate() {
 		//GIVEN
-		Integer testId = 1;
+		Integer testId = 10;
 		House testData = new House("18 Innis", "Apartment", "Renting", 3, 1, false);
-		House existing = new House(1, null, null, null, 0, 0, false);
+		House existing = new House(10, null, null, null, 0, 0, false);
 		House updatedHouse = new House(testId, "18 Innis", "Apartment", "Renting", 3, 1, false);
 		
 		//WHEN
