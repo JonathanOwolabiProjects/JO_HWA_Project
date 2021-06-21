@@ -63,7 +63,7 @@ public class HouseIntegrationTest {
 	
 	@Test
 	void testGetAll() throws Exception {
-		House testHouse = new House(1, "23 Innis", "Apartment", "Renting", 3, 1, false);
+		House testHouse = new House(6, "23 Innis", "Apartment", "Renting", 3, 1, false);
 		List<House> testHouses = List.of(testHouse);
 		String testHousesAsJSONArray = this.mapper.writeValueAsString(testHouses);
 
